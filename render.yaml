@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: tradereplica-api
+    runtime: node
+    rootDir: apps/api
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free
+    envVars:
+      - key: NODE_ENV
+        value: development
+      - key: USE_IN_MEMORY_MONGO
+        value: "true"
+      - key: SEED_SAMPLE_DATA
+        value: "true"
+      - key: JWT_SECRET
+        value: tradereplica-jwt-secret-prod-2024
+      - key: AADHAAR_ENCRYPTION_KEY
+        value: 0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef
+      - key: INR_PER_USDT
+        value: "88.5"
+      - key: CLIENT_URLS
+        value: http://localhost:3000,https://tradereplica-web.vercel.app
