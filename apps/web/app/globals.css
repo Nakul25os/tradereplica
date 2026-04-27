@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f3f7fb;
+  --foreground: #0f172a;
+  --muted: #64748b;
+  --border: rgba(148, 163, 184, 0.24);
+  --panel: rgba(255, 255, 255, 0.82);
+  --panel-strong: rgba(255, 255, 255, 0.94);
+  --soft: rgba(226, 232, 240, 0.78);
+}
+
+.dark {
+  --background: #07111f;
+  --foreground: #e5eef8;
+  --muted: #8ba0b8;
+  --border: rgba(148, 163, 184, 0.18);
+  --panel: rgba(10, 18, 32, 0.78);
+  --panel-strong: rgba(12, 22, 40, 0.94);
+  --soft: rgba(15, 23, 42, 0.84);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(34, 197, 94, 0.08), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.12), transparent 28%),
+    var(--background);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-3xl border backdrop-blur-xl shadow-glow;
+    background: var(--panel);
+  }
+
+  .panel-strong {
+    @apply rounded-3xl border backdrop-blur-xl shadow-glow;
+    background: var(--panel-strong);
+  }
+
+  .soft-panel {
+    @apply rounded-2xl border;
+    background: var(--soft);
+  }
+
+  .page-title {
+    @apply font-display text-3xl font-semibold tracking-tight md:text-4xl;
+  }
+
+  .section-title {
+    @apply font-display text-xl font-semibold tracking-tight;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.24em] text-emerald-400;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+}
+

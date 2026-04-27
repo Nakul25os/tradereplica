@@ -1,0 +1,25 @@
+runConfig:
+  minInstances: 0
+  maxInstances: 10
+  cpu: 1
+  memoryMiB: 512
+  concurrency: 40
+
+scripts:
+  runCommand: npm start
+
+env:
+  - variable: NODE_ENV
+    value: production
+  - variable: CLIENT_URLS
+    value: http://localhost:3000,https://replace-with-web-backend-url
+  - variable: USE_IN_MEMORY_MONGO
+    value: "true"
+  - variable: SEED_SAMPLE_DATA
+    value: "true"
+  - variable: INR_PER_USDT
+    value: "88.5"
+  - variable: JWT_SECRET
+    value: "tradereplica-jwt-secret-prod-2024"
+  - variable: AADHAAR_ENCRYPTION_KEY
+    value: "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"

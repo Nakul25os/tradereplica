@@ -1,0 +1,23 @@
+{
+  "name": "tradereplica",
+  "private": true,
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace @tradereplica/api\" \"npm run dev --workspace @tradereplica/web\"",
+    "dev:api": "npm run dev --workspace @tradereplica/api",
+    "dev:api:watch": "npm run dev:watch --workspace @tradereplica/api",
+    "dev:web": "npm run dev --workspace @tradereplica/web",
+    "start": "concurrently \"npm run start --workspace @tradereplica/api\" \"npm run start --workspace @tradereplica/web\"",
+    "seed": "npm run seed --workspace @tradereplica/api",
+    "firebase:deploy": "npx firebase-tools deploy --project tradereplica-46bd0",
+    "firebase:deploy:api": "npx firebase-tools deploy --only apphosting:tradereplica-api --project tradereplica-46bd0",
+    "firebase:deploy:web": "npx firebase-tools deploy --only apphosting:tradereplica-web --project tradereplica-46bd0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "firebase-tools": "^15.15.0"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "apphosting": [
+    {
+      "backendId": "tradereplica-api",
+      "rootDir": "apps/api",
+      "ignore": [
+        "node_modules",
+        ".git",
+        ".next",
+        "logs",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "apps/api/.data"
+      ]
+    },
+    {
+      "backendId": "tradereplica-web",
+      "rootDir": "apps/web",
+      "ignore": [
+        "node_modules",
+        ".git",
+        ".next",
+        "logs",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "apps/api/.data"
+      ]
+    }
+  ]
+}
