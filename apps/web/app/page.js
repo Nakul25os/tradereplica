@@ -1,5 +1,10 @@
+import { Suspense } from "react";
 import HomeScreen from "@/components/home-screen";
 
 export default function HomePage({ searchParams }) {
-  return <HomeScreen initialMarketType={searchParams?.marketType} />;
+  return (
+    <Suspense fallback={<div>Loading dashboard...</div>}>
+      <HomeScreen initialMarketType={searchParams?.marketType} />
+    </Suspense>
+  );
 }

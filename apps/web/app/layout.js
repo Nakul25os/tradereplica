@@ -1,4 +1,5 @@
 import "./globals.css";
+import { Suspense } from "react";
 import { Providers } from "@/components/providers";
 import Navbar from "@/components/layout/navbar";
 
@@ -17,7 +18,9 @@ export default function RootLayout({ children }) {
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.18),transparent_30%),radial-gradient(circle_at_right,rgba(59,130,246,0.18),transparent_22%)]" />
             <div className="absolute inset-0 bg-grid bg-[size:24px_24px] opacity-25" />
             <div className="relative mx-auto flex min-h-screen max-w-[1600px] flex-col px-4 pb-10 sm:px-6 lg:px-8">
-              <Navbar />
+              <Suspense fallback={<div className="h-20" />}>
+                <Navbar />
+              </Suspense>
               <main className="flex-1 pt-6">{children}</main>
             </div>
           </div>
